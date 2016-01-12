@@ -1,6 +1,6 @@
 {
   "name": "website-boilerplate",
-  "version": "1.2",
+  "version": "1.0.2",
   "description": "Mint basic website blueprint",
   "main": "index.js",
   "scripts": {
