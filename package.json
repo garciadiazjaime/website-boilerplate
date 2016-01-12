@@ -1,7 +1,7 @@
 {
   "name": "website-boilerplate",
   "version": "1.2",
-  "description": "",
+  "description": "Mint basic website blueprint",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint",
