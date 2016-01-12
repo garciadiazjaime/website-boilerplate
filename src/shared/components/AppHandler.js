@@ -1,17 +1,23 @@
-import React from "react";
-import { Link } from 'react-router';
+import React from 'react';
+
+import menuData from '../menuData';
+import Menu from './layout/menu/menuAAA';
+import FooterAAA from './layout/footer/footerAAA';
+
 
 export default class AppHandler extends React.Component {
+
   render() {
     return (
       <div>
-        <h1>App</h1>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
+        <Menu items={menuData.items} icons={menuData.icons} />
         {this.props.children}
+        <FooterAAA />
       </div>
     );
   }
 }
+
+AppHandler.propTypes = {
+  children: React.PropTypes.object.isRequired,
+};
