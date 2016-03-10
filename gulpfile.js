@@ -7,19 +7,35 @@ var replace = require('gulp-replace');
 var gulpCopy = require('gulp-copy');
 var config = require('./config');
 
-gulp.task('sprites:generate', () => {
+gulp.task('sprites:generatejs', () => {
   return sprity.src({
-    src: './resources/images/**/*.png',
-    style: 'sprite.js',
+    src: './resources/**/*.{png,jpg}',
+    style: './sprite.js',
     dimension: [{
       ratio: 1, dpi: 72
     }],
     split: true,
     orientation: 'binary-tree',
     margin: 0,
-    processor: sprityJS // The important part for sprity JS
+    processor: sprityJS
   })
-  .pipe(gulp.dest('public/images/sprites/'));
+  .pipe(gulpif('*.png', gulp.dest('./public/images/sprites'), gulp.dest('./src/shared/theme')))
+});
+
+
+gulp.task('sprites:generate', () => {
+  return sprity.src({
+    src: './resources/**/*.{png,jpg}',
+    style: './sprite.scss',
+    dimension: [{
+      ratio: 1, dpi: 72
+    }],
+    split: true,
+    orientation: 'binary-tree',
+    margin: 0,
+    processor: 'sass',
+  })
+  .pipe(gulpif('*.png', gulp.dest('./public/images/sprites'), gulp.dest('./src/shared/theme')))
 });
 
 gulp.task('clean:sprites', () => {
@@ -33,6 +49,12 @@ gulp.task('replace:sprite_url', () =>{
     .pipe(replace(/\.\.\/images/g, 'http://' + config.get('ipaddress') + ':' + config.get('port') + '/images/sprites'))
     .pipe(gulp.dest('./src/shared'));
 });
+
+// gulp.task('replace:sprite_url', () => {
+//   gulp.src(['./src/shared/theme/sprite.scss'])
+//     .pipe(replace(/\.\.\/images/g, '/images/sprites'))
+//     .pipe(gulp.dest('./src/shared/theme/'));
+// });
 
 gulp.task('clean:spritejs', () => {
   del(['./public/images/sprites/sprite.js']);

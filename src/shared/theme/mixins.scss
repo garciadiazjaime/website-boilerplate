@@ -1,21 +1,4 @@
-$blue: #0055A0;
-$red: #E72227;
-$green: #00A54F;
-$yellow: #FFE400;
-$gray: #B5B5B5;
-$white: #FFFFFF;
-$black: #000000;
-
-$fontA: 'nunito';
-$fontABold: 'nunito-bold';
-$fontALigth: 'nunito-light';
-
-
-$isTablet: "only screen and (min-width : 768px) and (max-width: 1023px)";
-$isPhone: "only screen and (max-width : 320px)";
-
-
-// ****************** mixins *********************
+// ****************** MIXINS *********************
 
 // generic transform
 @mixin transform($transforms) {
@@ -57,7 +40,7 @@ $isPhone: "only screen and (max-width : 320px)";
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
-// **************** GRADIENTS ********************
+// Gradients
 @function convert-angle($value, $unit) {
   $convertable-units: deg grad turn rad;
   $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
@@ -126,27 +109,4 @@ $isPhone: "only screen and (max-width : 320px)";
   background: nth(nth($color-stops, 1), 1);
   background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
   background: linear-gradient($direction, $color-stops);
-}
-
-// **************** PADDINGS & MARGINS *************************
-.colNopad{
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.sidePadded50{
-  padding-left: 50px;
-  padding-right: 50px;
-
-	@media screen and (max-width: 400px){
-	    padding-left: 20px;
-	    padding-right: 20px;
-	}
-}
-
-.bottom20{
-  margin-bottom: 20px;
-}
-.bottom46{
-  margin-bottom: 46px;
 }
