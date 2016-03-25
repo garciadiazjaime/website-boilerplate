@@ -18,10 +18,17 @@ app.use(bodyParser.urlencoded({
   extended: false,
 }));
 
-app.use(express.static('bower_components'));
-app.use(express.static('public'));
+app.use(express.static('static'));
 
 app.use('/api/', apiRoutes);
+
+app.get('/robots.txt', (req, res) => {
+  res.status(200).send('robots');
+});
+
+app.get('/sitemap.xml', (req, res) => {
+  res.status(200).send('sitemap');
+});
 
 app.get('/*', function (req, res) {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
