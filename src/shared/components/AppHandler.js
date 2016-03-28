@@ -23,6 +23,15 @@ export default class AppHandler extends React.Component {
     window.removeEventListener('scroll', this.onScroll, false);
   }
 
+  onScroll() {
+    const offset = window.pageYOffset;
+    if (offset > 186) {
+      $('#menu_wrapper').addClass('navbar-fixed-top');
+    } else {
+      $('#menu_wrapper').removeClass('navbar-fixed-top');
+    }
+  }
+
   googleAnalytics() {
     /*eslint-disable */
     // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,15 +41,6 @@ export default class AppHandler extends React.Component {
     // ga('create', 'UA--', 'auto');
     // ga('send', 'pageview');
     /*eslint-enable */
-  }
-
-  onScroll() {
-    const offset = window.pageYOffset;
-    if (offset > 186) {
-      $('#menu_wrapper').addClass('navbar-fixed-top');
-    } else {
-      $('#menu_wrapper').removeClass('navbar-fixed-top');
-    }
   }
 
   scrollHandler(isFirstTime) {
