@@ -1,9 +1,11 @@
+/* eslint max-len: [2, 500, 4] */
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RoutingContext } from 'react-router';
 import bodyParser from 'body-parser';
 
+import DataWrapper from './dataWrapper';
 import config from '../../config';
 import apiRoutes from './helpers/api';
 import routes from '../shared/config/routes';
@@ -29,9 +31,9 @@ app.get('/*', function (req, res) {
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
-      const content = renderToString(<RoutingContext {...renderProps} />);
-      res.render('index', { content });
-      // res.status(200).send(renderToString(<RoutingContext {...renderProps} />))
+      const props = {};
+      const content = renderToString(<DataWrapper data={props}><RoutingContext {...renderProps} /></DataWrapper>);
+      res.render('index', { content, props });
     } else {
       res.status(404).send('Not found');
     }

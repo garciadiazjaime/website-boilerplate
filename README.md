@@ -8,13 +8,12 @@ Run project:
 a) let's install all packages:
 
 `npm install`
-`bower install`
 
-b) let's run the server
+b) let's run dev server
 
-`npm start`
+`npm run dev`
 
-By default server will run on http://127.0.0.1:3030/
+By default server will run on http://127.0.0.1:8080/
 
 Note: `npm run sprites` requires 'sass'
 http://sass-lang.com/install

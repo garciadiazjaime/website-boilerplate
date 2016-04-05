@@ -5,6 +5,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var replace = require('gulp-replace');
 var gulpCopy = require('gulp-copy');
+var gulpif = require('gulp-if');
 var config = require('./config');
 var cleanCSS = require('gulp-clean-css');
 var concat = require('gulp-concat');
@@ -42,27 +43,28 @@ gulp.task('sprites:generate', () => {
       margin: 0,
       processor: 'sass',
     })
-    .pipe(gulpif('*.png', gulp.dest('./public/images/sprites'), gulp.dest('./src/shared/theme')))
+    .pipe(gulpif('*.png', gulp.dest('./build/images/sprites'), gulp.dest('./src/shared/theme')))
 });
 
 gulp.task('clean:sprites', () => {
   return del([
-    './public/images/sprites'
+    './static/images/sprites'
   ]);
 });
 
 gulp.task('replace:sprite_url', () => {
-  gulp.src(['./public/images/sprites/sprite.js'])
-    .pipe(replace(/\.\.\/images/g, 'http://' + config.get('ipaddress') + ':' + config.get('port') + '/images/sprites'))
-    .pipe(gulp.dest('./src/shared'));
+  gulp.src(['./src/shared/theme/sprite.scss'])
+    // .pipe(replace(/\.\.\/images/g, 'http://' + config.get('ipaddress') + ':' + config.get('port') + '/images/sprites'))
+    .pipe(replace(/\.\.\/images/g, '/images/sprites'))
+    .pipe(gulp.dest('./src/shared/theme'));
 });
 
 gulp.task('clean:spritejs', () => {
-  del(['./public/images/sprites/sprite.js']);
+  del(['./static/images/sprites/sprite.js']);
 })
 
 gulp.task('build:sprites', (cb) => {
-  runSequence('clean:sprites', 'sprites:generate', ['replace:sprite_url', 'clean:spritejs'], cb);
+  runSequence('clean:sprites', 'sprites:generate', ['replace:sprite_url'], cb);
 });
 
 gulp.task('minify-css', function() {
