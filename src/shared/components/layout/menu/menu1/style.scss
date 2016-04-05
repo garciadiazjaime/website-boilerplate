@@ -60,7 +60,7 @@ $height: 110px;
 }
 .facebook {
   @extend .icon-sprites;
-  // @include sprite($sprites-imagen-facebook);
+  @include sprite($sprites-facebook_icon);
   @extend .sm_icon;
 }
 @media#{$isTablet}{
