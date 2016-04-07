@@ -25,7 +25,7 @@
     font-size: 10px;
     display: block;
     margin-bottom: 10px;
-    font-family: $fontBBold;
+    font-family: $fontA;
   }
   ul{
     padding-left: 0;
@@ -51,7 +51,7 @@
 }
 .serviceTitle{
   color: $white!important;
-  font-family: $fontBBold;
+  font-family: $fontA;
   display: block;
   border-bottom: 1px solid $gray;
   padding-bottom: 10px;
@@ -60,7 +60,7 @@
 .serviceElement{
   a{
     color: $blue!important;
-    font-family: $fontB;
+    font-family: $fontA;
     display: block;
     margin-bottom: 10px;
   }
@@ -72,7 +72,7 @@
 }
 .contactBlock{
   color: $white!important;
-  font-family: $fontBBold;
+  font-family: $fontA;
   display: block;
   border-bottom: 1px solid $gray;
   border-top: 1px solid $gray;
@@ -82,7 +82,7 @@
 }
 
 .addresses {
-  font-family: $fontB;
+  font-family: $fontA;
   h4{
     color: $blue!important;
     margin-bottom: 20px;
@@ -99,7 +99,7 @@
   background-color: $mediumGray;
   color: $white;
   padding: 10px 0;
-  font-family: $fontB;
+  font-family: $fontA;
   font-size: 10px;
   a{
     color: $white;
