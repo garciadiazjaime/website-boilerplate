@@ -1,88 +1,168 @@
 @import '../../../../theme/constants';
-$height: 110px;
+// ********** Control variables *********************
+// - General -
+$height: 75px;
+$background-color: $white;
+// - links -
+$link-color: $gray;
+$hover-color: $darkGray!important;
+$active: $black;
+// - responsive
+$bar-color: $black;
+$collapse-border-color: $black;
+$hamburger-background: darken($white, 10%)!important;
 
+
+// ********** The full navbar *********************
 .navbarDefault {
+  @include border-radius(0);
   height: $height;
-  background-color: $white!important;
+  background-color: $background-color!important;
   border: none!important;
   margin-bottom: 0;
 }
+// ********** Navbar Header consists in mobile button and brand image *********************
 .navbarHeader {
   height: $height;
   position: relative;
 }
+.navbarBrand {
+  margin-left: 0!important;
+  padding: 0;
+  @extend .vCenter;
+  @extend .icon-sprites;
+  @include sprite($sprites-facebook-icon);
+  left: 0;
+}
+.toggleButton{
+  @extend .vCenter;
+  margin: 0;
+  right: 15px;
+  border: none;
+  .iconBar{
+    background-color: $bar-color!important;
+  }
+  &:hover, &:focus{
+    background-color: $hamburger-background;
+  }
+}
+// ********** Navbar Collapse contains the elements that will hide when on mobile size *********************
+.navbarCollapse{
+  float: right;
+  border: none;
+  padding-right: 0;
+  padding-left: 0;
+  background: $background-color;
+}
 .navbarNav {
-  float: right!important;
-  margin-right: 80px!important;
   >li{
     height: $height;
   }
 }
-.navbarBrand {
-  @extend .vCenter;
-  padding-top: 0!important;
-  @extend .icon-sprites;
-  // @include sprite($sprites-brand);
-  left: 45px;
-}
-
-.navbarCollapse{
-  border: none;
-}
 .navbarNavAnchor {
-  @extend .vCenter;
-  font-family: $fontB;
+  font-family: $fontA;
+  font-weight: 300;
   padding-top: 0!important;
   padding-bottom: 0!important;
   font-size: 14px;
-  color: $darkBlue!important;
+  color: $link-color;
   text-transform: uppercase;
+  @extend .vCenter;
   &:hover {
-    color: $blueGray!important;
-    background-color: initial;
+    color: $hover-color;
+    background-color: transparent!important;
   }
 }
-.socialNetwork {
-  margin: 0 -15px;
-  position: relative;
+
+.navbarIcons {
+  margin: 0;
   float: right;
+  height: $height;
   padding: 0;
   li{
     height: $height;
     position: relative;
-    width: 50px;
     display: inline-block;
     list-style: none;
   }
-}
-.sm_icon {
-  @extend .fCenter;
-}
-.facebook {
-  @extend .icon-sprites;
-  @include sprite($sprites-facebook_icon);
-  @extend .sm_icon;
+  .sm_icon {
+    @extend .vCenter;
+    right: 0;
+  }
+  .facebook{
+    @extend .sm_icon;
+    @extend .icon-sprites;
+    @include sprite($sprites-facebook_icon);
+    position: relative;
+  }
+  .sm2 {
+    @extend .sm_icon;
+    @extend .icon-sprites;
+    @include sprite($sprites-facebook_icon);
+    position: relative;
+  }
+  .sm3 {
+    @extend .sm_icon;
+    @extend .icon-sprites;
+    @include sprite($sprites-facebook_icon);
+    position: relative;
+  }.sm4 {
+    @extend .sm_icon;
+    @extend .icon-sprites;
+    @include sprite($sprites-facebook_icon);
+    position: relative;
+  }
 }
 @media#{$isTablet}{
+  .navbarBrand{
+    left: 15px;
+  }
   .navbarNav {
     margin-right: 10px!important;
   }
-  .navbarNavAnchor {
-    padding: 10px 10px!important;
+  .navbarBrand {
+    left: 15px;
   }
 }
 @media#{$isPhone}{
+  .navbarBrand{
+    left: 15px;
+  }
   .navbarCollapse{
-    background: $white;
     position: relative;
     z-index: 1000;
+    float: none;
+    border-bottom: 1px solid $collapse-border-color;
+    border-top: 2px solid $collapse-border-color;
+    li {
+      height: auto;
+      padding: 15px 0;
+    }
   }
-  .navbarNav, .socialNetwork {
+  .navbarIcons{
+    text-align: left;
+    display: block;
+    float: none;
+    height: auto;
+    li{
+      padding: 10px 15px 15px;
+    }
+    .sm_icon {
+      top: 0;
+      @include transform(translateY(0));
+    }
+  }
+  .navbarNav {
     float: none!important;
-    margin-left: 35px!important;
-    margin-right: 0!important;
-  }
-  .navbarBrand{
-    left: 10px;
+    margin: 0;
+    position: relative;
+    li{
+      padding: 10px 0;
+    }
+    .navbarNavAnchor{
+      position: relative;
+      @include transform(translateY(0));
+      top: 0;
+    }
   }
 }
