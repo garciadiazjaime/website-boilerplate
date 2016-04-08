@@ -26,10 +26,9 @@ export default class MainMenu extends React.Component {
     return data.map((item, index) => {
       return (<li key={index}>
           <Link to={item.url} className={style.sm_icon} id={item.url} target="_blank">
-              <SVG network={item.title} background={style.background} color={style.color}/>
+            <SVG network={item.title} className={style[item.title]}/>
           </Link>
-        </li>
-      );
+        </li>);
     });
   }
 

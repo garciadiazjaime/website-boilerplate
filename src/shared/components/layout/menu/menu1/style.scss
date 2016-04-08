@@ -73,7 +73,7 @@ $hamburger-background: darken($white, 10%)!important;
   color: $link-color;
   text-transform: uppercase;
   @extend .vCenter;
-  &:hover {
+  &:hover, &:focus {
     color: $hover-color;
     background-color: transparent!important;
   }
@@ -102,12 +102,44 @@ $hamburger-background: darken($white, 10%)!important;
         path{
           fill: $sm-color;
         }
+      }
+      .facebook{
         &:hover{
-          circle{
-            fill: $sm-background-hover;
+          circle {
+            fill: #3b5998;
           }
           path {
-            fill: $sm-color-hover;
+            fill: #fff;
+          }
+        }
+      }
+      .twitter{
+        &:hover{
+          circle {
+            fill: #55acee;
+          }
+          path {
+            fill: #fff;
+          }
+        }
+      }
+      .pinterest{
+        &:hover{
+          circle {
+            fill: #cb2027;
+          }
+          path {
+            fill: #fff;
+          }
+        }
+      }
+      .instagram{
+        &:hover{
+          circle {
+            fill: #125688;
+          }
+          path {
+            fill: #fff;
           }
         }
       }
@@ -123,6 +155,9 @@ $hamburger-background: darken($white, 10%)!important;
   }
   .navbarBrand {
     left: 15px;
+  }
+  .navbarIcons {
+    padding-right: 10px;
   }
 }
 @media#{$isPhone}{
