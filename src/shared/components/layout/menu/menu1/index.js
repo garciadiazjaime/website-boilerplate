@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+import SVG from '../../../svg';
+
 const style = require('./style.scss');
 
 
@@ -23,9 +25,10 @@ export default class MainMenu extends React.Component {
   getIcons(data) {
     return data.map((item, index) => {
       return (<li key={index}>
-          <Link to={item.url} className={style[item.title]} id={item.url} target="_blank" />
-        </li>
-      );
+          <Link to={item.url} className={style.sm_icon} id={item.url} target="_blank">
+            <SVG network={item.title} className={style[item.title]}/>
+          </Link>
+        </li>);
     });
   }
 
