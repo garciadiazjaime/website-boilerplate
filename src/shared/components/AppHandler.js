@@ -69,7 +69,7 @@ export default class AppHandler extends React.Component {
     return (<div>
       <MainMenu items={sitemap.items.children} icons={sitemap.icons} onClick={this.clickHandler} />
       {this.props.children}
-      <Footer items={sitemap.items.children} addresses={sitemap.addresses}/>
+      <Footer items={sitemap.items.children} addresses={sitemap.addresses} icons={sitemap.icons}/>
     </div>);
   }
 }
