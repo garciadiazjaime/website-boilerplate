@@ -1,110 +1,107 @@
 @import '../../../../theme/constants';
-@import '../../../../theme/wrappers/wrappers';
+// ------ VARIABLES ---------
+$background-color: $darkGray;
+$link-color: $gray;
+$link-color-hover: $white;
+$sm-background: $gray;
+$sm-color: $white;
+
+// ------ STYLE ----------
 .footerWrapper {
-  background-color: $darkBlue;
-  padding-top: 50px;
-  margin-top: 50px;
+  background-color: $background-color;
   a{
-    font-size: 10px;
+    font-size: 12px;
+    color: $link-color!important;
     &:hover{
-      color: $blue;
+      color: $link-color-hover!important;
+    }
+  }
+  .container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .sitemap{
+    padding-left: 0;
+    list-style: none;
+    li{
+      display: block;
+    }
+    a{
+      display: block;
+      margin-bottom: 10px;
+      font-family: $fontA;
+    }
+  }
+  svg {
+    position: relative;
+    display: block;
+    margin: 0 auto 20px;
+    width: 40px;
+    height: 40px;
+    circle{
+      fill: $sm-background;
+    }
+    path{
+      fill: $sm-color;
+    }
+  }
+  .facebook{
+    &:hover{
+      circle {
+        fill: #3b5998;
+      }
+      path {
+        fill: #fff;
+      }
+    }
+  }
+  .twitter{
+    &:hover{
+      circle {
+        fill: #55acee;
+      }
+      path {
+        fill: #fff;
+      }
+    }
+  }
+  .pinterest{
+    &:hover{
+      circle {
+        fill: #cb2027;
+      }
+      path {
+        fill: #fff;
+      }
+    }
+  }
+  .instagram{
+    &:hover{
+      circle {
+        fill: #125688;
+      }
+      path {
+        fill: #fff;
+      }
     }
   }
 }
-.brand{
-  margin-bottom: 50px;
-}
-.logo {
-  @extend .icon-sprites;
-  // @include sprite($sprites-brand-footer);
-}
-.sitemap{
+.contact_info{
   a{
-    color: $white!important;
-    text-transform: uppercase;
-    font-size: 10px;
     display: block;
-    margin-bottom: 10px;
-    font-family: $fontA;
-  }
-  ul{
-    padding-left: 0;
   }
 }
-.pad30{
-  padding-left: 30px;
-}
-.facebook {
-  display: block;
-  float: right;
-  padding-right: 35px;
-  margin-right: 65px;
-  color: $blue!important;
-  position: relative;
-  &:after {
-    content: '';
-    @extend .icon-sprites;
-    @extend .vCenter;
-    right: 0;
-    // @include sprite($sprites-imagen-facebook);
-  }
-}
-.serviceTitle{
-  color: $white!important;
-  font-family: $fontA;
-  display: block;
-  border-bottom: 1px solid $gray;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-.serviceElement{
-  a{
-    color: $blue!important;
-    font-family: $fontA;
-    display: block;
-    margin-bottom: 10px;
-  }
-}
-.leftBorder{
-  border-left: 1px solid $gray;
-  padding-left: 30px;
-  margin-bottom: 40px;
-}
-.contactBlock{
-  color: $white!important;
-  font-family: $fontA;
-  display: block;
-  border-bottom: 1px solid $gray;
-  border-top: 1px solid $gray;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin: 20px 0;
-}
-
-.addresses {
-  font-family: $fontA;
-  h4{
-    color: $blue!important;
-    margin-bottom: 20px;
-    font-size: 10px;
-  }
-  p{
-    color: $white!important;
-    font-size: 12px;
-  }
-}
-
-
 .powered {
-  background-color: $mediumGray;
+  background-color: $black;
   color: $white;
   padding: 10px 0;
   font-family: $fontA;
   font-size: 10px;
   a{
-    color: $white;
+    color: $gray!important;
     &:hover{
-      color: $blue;
+      color: $white;
     }
   }
 }

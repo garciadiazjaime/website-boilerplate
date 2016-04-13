@@ -15,11 +15,7 @@ export default class SiteMap extends React.Component {
         { children }
       </li>);
     }, this);
-    return (<div className={'row ' + style.sitemap}>
-      <div className={'col-xs-12 ' + style.pad30}>
-        <ul>{items}</ul>
-      </div>
-    </div>);
+    return (<ul className={style.sitemap}>{items}</ul>);
   }
 
   render() {
