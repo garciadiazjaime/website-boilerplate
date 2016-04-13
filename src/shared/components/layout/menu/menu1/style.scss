@@ -18,6 +18,9 @@ $collapse-border-color: $black;
 $hamburger-background: darken($white, 10%)!important;
 
 
+.navbarWrapper {
+  height: $height;
+}
 // ********** The full navbar *********************
 .navbarDefault {
   @include border-radius(0);
