@@ -73,6 +73,7 @@
     "is-promise": "^2.1.0",
     "jade": "^1.11.0",
     "jquery": "^2.2.1",
+    "lib-element-catalogue": "git+https://github.com/garciadiazjaime/lib-element-catalogue.git#feature/carousel1",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
