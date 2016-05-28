@@ -53,35 +53,36 @@
 .controls {
   background: none!important;
   opacity: 1;
-}
-.prev {
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-right: 15px solid $white;
-  opacity: .8;
-  position: absolute;
-  @extend .vCenter;
-  left: 10px;
-  &:hover {
-    border-right-color: $white;
-    opacity: 1;
+
+  .prev {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid $white;
+    opacity: .8;
+    position: absolute;
+    @extend .vCenter;
+    left: 10px;
+    &:hover {
+      border-right-color: $white;
+      opacity: 1;
+    }
   }
-}
-.next {
-  width: 0;
-  height: 0;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 15px solid $white;
-  opacity: .8%;
-  position: absolute;
-  @extend .vCenter;
-  right: 10px!important;
-  &:hover {
-    border-left-color: $white;
-    opacity: 1;
+  .next {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid $white;
+    opacity: .8%;
+    position: absolute;
+    @extend .vCenter;
+    right: 10px!important;
+    &:hover {
+      border-left-color: $white;
+      opacity: 1;
+    }
   }
 }
 @media#{$isPhone}{
