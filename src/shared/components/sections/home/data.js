@@ -1,7 +1,7 @@
 /* eslint max-len: [2, 600, 4] */
 
 export default {
-  banner1: [{
+  block1: [{
     image: 'https://www.dropbox.com/s/15q8zymwsdzcoig/directorio-playas-tijuana-banner-1.png?dl=0',
     title: 'Mint IT Media',
     description: 'Páginas Web, Sistemas y directorios como éste.',
